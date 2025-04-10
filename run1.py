@@ -25,8 +25,8 @@ if app_mode=='Home':
 	st.markdown('Dataset :')    
 	data=pd.read_csv('test.csv')    
 	st.write(data.head())    
-st.markdown('Applicant Income VS Loan Amount ')   
-st.bar_chart(data[['ApplicantIncome','LoanAmount']].head(20))
+	st.markdown('Applicant Income VS Loan Amount ')   
+	st.bar_chart(data[['ApplicantIncome','LoanAmount']].head(20))
  
    
 elif app_mode == 'Prediction':     
@@ -48,21 +48,21 @@ elif app_mode == 'Prediction':
 	Education=st.sidebar.radio('Education',tuple(edu.keys()))    
 	Property_Area=st.sidebar.radio('Property_Area',tuple(prop.keys()))    
 
-class_0 , class_3 , class_1,class_2 = 0,0,0,0    
-if Dependents == '0':        
-	class_0 = 1    
-elif Dependents == '1':        
-	class_1 = 1   
-elif Dependents == '2' :        
-	class_2 = 1    
-else:        class_3= 1    
+	class_0 , class_3 , class_1,class_2 = 0,0,0,0    
+	if Dependents == '0':        
+			class_0 = 1    
+	elif Dependents == '1':        
+			class_1 = 1   
+	elif Dependents == '2' :        
+			class_2 = 1    
+	else:        class_3= 1    
 
-Rural,Urban,Semiurban=0,0,0    
-if Property_Area == 'Urban' :        
-	Urban = 1    
-elif Property_Area == 'Semiurban' :        
-	Semiurban = 1    
-else :        Rural=1
+	Rural,Urban,Semiurban=0,0,0    
+	if Property_Area == 'Urban' :        
+			Urban = 1    
+	elif Property_Area == 'Semiurban' :        
+			Semiurban = 1    
+	else :	Rural=1
    
    
     data1={
